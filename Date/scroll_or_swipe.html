@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll or Swipe</title>
+    <!-- Including image sizes and margins -->
+    <link rel="stylesheet" href="scroll.css">
+</head>
+<body>
+    <div class="scroll-container">
+        
+        <div id="profile-container" class="profile-container">
+           <div class="heading">
+             <h1>Get a Glimpse of Others</h1>
+           </div>
+        <div class="filter-section">
+            <h2>Filter Options</h2>
+            <div class="filter-item">
+                   <label for="gender-filter">Gender:</label>        <!-- tried to do filter -->
+                   <select id="gender-filter">
+                       <option value="all">All</option>
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                       <option value="other">Other</option>
+                   </select>
+               </div>
+               <div class="filter-item">
+                   <label for="interest-filter">Interests(Please press Ctrl+Click for Multiple Choices):</label>
+                   <select id="interest-filter" multiple>
+                       <option value="traveling">Traveling</option>
+                       <option value="sports">Sports</option>
+                       <option value="movies">Movies</option>
+                       <option value="music">Music</option>
+                       <option value="literature">Literature</option>
+                       <option value="technology">Technology</option>
+                       <option value="fashion">Fashion</option>
+                       <option value="art">Art</option>
+                   </select>
+               </div>
+               <div class="filter-item">
+                   <label for="hobbies-filter">Hobbies:</label>
+                   <select id="hobbies-filter" multiple>
+                       <option value="reading">Reading</option>
+                       <option value="cooking">Cooking</option>
+                       <option value="coding">Coding</option>
+                       <option value="gardening">Gardening</option>
+                       <option value="painting">Painting</option>
+                       <option value="watchingyt">Watching YouTube/Instagram</option>
+                       <option value="playingmusical">Playing Musical Instruments</option>
+                       <option value="photography">Photography</option>
+                   </select>
+               </div>
+               <button id="apply-filter-btn">Apply Filter</button>
+           </div>
+           <div class="profile-card">
+            <!-- Profile cards to be generated here through .js-->
+            
+           
+           </div>
+          
+            
+        </div>
+    </div>
+
+    <!-- Include necessary JavaScript -->
+    <script src="scroll_or_swipe.js"></script>
+    
+</body>
+</html>

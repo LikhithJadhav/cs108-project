@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <! Stylizing here -->
+    <link rel="stylesheet" href="dating.css"> 
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="date-container">
+        <div class="Heading">
+        <h2>Find Your Right Match</h2>
+        </div>
+        <! Specifying how the form data will be handled when submitted,# means current page and post means it will be sent to the body -->
+        <form id="profileForm" > 
+            <div class="form-group">
+                <label for="rollno">IITB Roll Number:</label>
+                <input type="text" id="rollno" name="rollno" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="year">Year of Study:</label>
+                <input type="text" id="year" name="year" required >
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+            <div class="input-group" id="genderOptions" >
+                <label>Gender:</label>
+                <input type="radio" id="MaleOption" name="Option" >
+                <label for="MaleOption">Male</label>
+                <input type="radio" id="FemaleOption" name="Option">
+                <label for="FemaleOption">Female</label>
+                <input type="radio" id="OtherOption" name="Option" >
+                <label for="OtherOption">Other</label>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required >
+            </div>
+            <div class="input-group" id="interestOptions" name="interest">
+                <label>Interests:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="interest-traveling" name="interest" value="traveling">
+                    <label for="interest-traveling">Traveling</label>
+    
+                    <input type="checkbox" id="interest-sports" name="interest" value="sports">
+                    <label for="interest-sports">Sports</label>
+                  
+                    <input type="checkbox" id="interest-movies" name="interest" value="movies">
+                        <label for="interest-movies">Movies</label>
+
+                    <input type="checkbox" id="interest-music" name="interest" value="music">
+                        <label for="interest-music">Music</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="interest-literature" name="interest" value="literature">
+                        <label for="interest-literature">Literature</label>
+                    
+                    <input type="checkbox" id="interest-technology" name="interest" value="technology">
+                        <label for="interest-technology">Technology</label>
+                    <input type="checkbox" id="interest-fashion" name="interest" value="fashion">
+                        <label for="interest-fashion">Fashion</label>
+                    <input type="checkbox" id="interest-art" name="interest" value="art">
+                        <label for="interest-art">Art</label>
+                    
+                </div>
+            
+                <div class="input-group" id="hobbiesOptions" name="hobbies">
+                    <label>Hobbies:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="hobbies-reading" name="hobbies" value="reading">
+                        <label for="hobbies-reading">Reading</label>
+        
+                        <input type="checkbox" id="hobbies-cooking" name="hobbies" value="cooking">
+                        <label for="hobbies-cooking">Cooking</label>
+                      
+                        <input type="checkbox" id="hobbies-coding" name="hobbies" value="coding">
+                            <label for="hobbies-coding">Coding</label>
+    
+                        <input type="checkbox" id="hobbies-gardening" name="hobbies" value="gardening">
+                            <label for="hobbies-gardening">Gardening</label>
+                    </div>
+    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="hobbies-painting" name="hobbies" value="painting">
+                            <label for="hobbies-painting">Painting</label>
+                        
+                        <input type="checkbox" id="hobbies-watchingyt" name="hobbies" value="watchingyt">
+                            <label for="hobbies-watchingyt">Watching YouTube/Instagram</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="hobbies-playingmusical" name="hobbies" value="playingmusical">
+                            <label for="hobbies-playingmusical">Playing Musical Instruments</label>
+                        <input type="checkbox" id="hobbies-photography" name="hobbies" value="photography">
+                            <label for="hobbies-photography">Photography</label>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <button  id="moddagud" >Find Your Right Match</button>
+                    </div>
+                </div>
+                </form>
+                    
+                        <button class="scroll-btn" onclick="swipe()">Scroll through Profiles </button>
+                        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <script src="one.js"></script>
+    <script>
+        // Function to handle logout
+        function logout() {
+            // Redirect to login page
+            window.location.href = "login.html";
+        }
+
+        function swipe() {
+            // Redirect to scroll page
+            window.location.href = "scroll_or_swipe.html";
+            
+        }
+    </script>
+   
+</body>
+</html>

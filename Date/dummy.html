@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Date</title>
+    <style>
+        body {
+            background-image: url("https://ideogram.ai/api/images/direct/T_3Ex5jQQvSEDbJYQK6vNQ.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        .content {
+            padding: 20px; 
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
+        .details {
+            flex: 1;
+        }
+        .image {
+            flex-shrink: 0;
+            margin-left: 20px; 
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .male {
+            background-color: lightblue;
+        }
+        .female {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;border-radius:10%;">
+        <button type="button" onclick="letsgo()">Let's Go</button>
+    </div>
+    <div class="container"><div class="content" id="user_match"></div></div>
+    <div id="profile"></div>
+    <script>
+        window.addEventListener('message', function(event) {
+            var receivedData = event.data;
+        });
+        var user_gender=receivedData.Gender;
+        var user_interests=receivedData.Interests;
+        var user_hobbies=receivedData.Hobbies;
+        var i=0;
+        var user_count=user_interests.length+user_hobbies.length;
+        function letsgo(){
+            const fs = require('fs');
+            function readJSONFile(filename) {
+                const data = fs.readFileSync(filename, 'utf8');
+                return JSON.parse(data);
+            }
+            function findIntersection(arr1, arr2) {
+                const intersection = arr1.filter(value => arr2.includes(value));
+                return intersection;
+            }
+            var j=0;
+            var count=[];
+            const jsonData = readJSONFile('profile.json');
+            jsonData.forEach((dict, index) => {
+                const array1 = dict.Interests;
+                const array2 = dict.Hobbies;
+                count[j]=findIntersection(user_interests,array1).length+findIntersection(user_hobbies,array2).length;
+                j+=1;
+            });
+            var no_match=true;
+            for(var a=0;a<j;a++){
+                no_match=no_match && (count[a]==0);
+            }
+            if(no_match==true){
+                document.getElementById('user_match').innerHTML="Sorry,No one matches your profile.";
+            }
+            var k=i;
+            for(;k<j;k++){
+                if (user_count == 0 && no_match==false){
+                    document.getElementById('user_match').innerHTML="That's it,End of possible matches for you.";
+                    break;
+                }
+                else if(user_count === count[k]){
+                    function fetchData(callback) {
+                        fetch('profile.json')
+                          .then(response => response.json())
+                          .then(data => callback(data));
+                    }
+                    function displayProfile(data,k1) {
+                        const profile = data[k1];
+                          const profileHTML = `
+                            <div class="profile-container">
+                              <div class="details">
+                                <h2>Name: ${profile.name}</h2>
+                                <p>Age: ${profile.age}</p>
+                                <p>Occupation: ${profile.occupation}</p>
+                              </div>
+                              <div class="image">
+                                <img src="${profile.image}" alt="${profile.name}">
+                              </div>
+                            </div>
+                          `;
+                          document.getElementById('profile').innerHTML = profileHTML;
+                    }
+                    const k1=k+1;
+                    fetchData(data => displayProfile(data,k1));
+                    i=k+1;
+                    if(i==j){i=0;user_count-=1;}
+                    break;
+                }
+                else if (k==j-1){i=0;user_count-=1;}
+            }
+        }
+    </script>
+</body>

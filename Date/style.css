@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(pexels-lucianphotography-3693393.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .quote {
+    text-align: center;
+    margin-bottom:550px ;
+  }
+  .quote p {
+    text-align: center;
+    font-size: 35px;
+    color: red;
+  }
+  
+  .login-container {
+    width: 500px;
+    margin: 100px;
+    
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .msg_popup {
+    text-align: center;
+    color: red;
+  }
+ 
+  .input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+  .input-group input[type="radio"] {
+    margin-right: 5px;
+}
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    text-align: center;
+  }
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.pattern-dot {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pattern-dot.active {
+    background-color: #007bff;
+}
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+body {
+    font-family: 'CustomFont', sans-serif; /* Apply the custom font to the entire body */
+}
+  
+  .forgot-password {
+    float: right;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  .forgot-container {
+    width: 400px;
+    margin: 100px;
+   background-color: lavender;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .dhabidi {
+    padding-top: 8px;
+    float: right;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .dhabidi:hover {
+    text-decoration: underline;
+  }
+
+  .forget {
+    text-align: center;
+    
+  }
+  
+
+.radio-option {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    margin-right: 20px; /* Add space between radio button groups */
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 5px; /* Add some space between radio buttons */
+    
+}
+.input-group input[type="radio"] {
+  display: none; /* Hide the default radio buttons */
+}
+
+/* Style labels for radio buttons */
+.input-group label {
+  cursor: pointer;
+  margin-right: 15px;
+  position: relative;
+}
+
+/* Style radio dot */
+.input-group input[type="radio"] + label::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid black; /* Change this to the desired color */
+  margin-right: 8px;
+  position: relative;
+  top: 2px;
+  padding: 4px;
+}
+.input-group input[type="radio"]:checked + label::before {
+  background-color: #007bff;
+}
+
+
+
+/* Style individual checkboxes */
+
+
+/* Ensure only four checkboxes are displayed per row */
+.checkbox-group input[type="checkbox"]:nth-child(n+5) {
+  margin-top: 10px; /* Adjust the vertical spacing between rows */
+}
+
+/* Adjust label alignment */
+
+ 

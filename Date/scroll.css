@@ -1,0 +1,83 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+   
+    background-image: url(pexels-lucianphotography-3693393.jpg);
+    background-size: cover;
+  }
+  .profile-container {
+    
+    padding: 20px; 
+   
+  }
+  
+  .heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-card {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    background-color: lavender;
+    border-radius: 20px;
+    margin-bottom: 50px; /* Add some margin between profile cards */
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.9); 
+    
+  }
+  
+  .profile-card img {
+    width: 300px; /* Adjusting image width */
+    height:auto;
+    margin-right: 50px; /* Adding  space between image and details */
+    border-radius: 20px;
+  }
+  
+  .profile-details {
+    flex-grow: 1;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .vapas-btn {
+    text-align: center;
+    background-color: lightblue; 
+    color: red; /* White text color */
+    padding: 10px 30px; /* Padding around the text */
+    width: 300px;
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Font size */
+  }
+.vapas-btn:hover {
+  background-color: wheat;
+}
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    margin-right: 10px;
+}
+
+.filter-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styling for "Apply Filter" button */
+.apply-filter-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.apply-filter-btn:hover {
+    background-color: #0056b3;
+}

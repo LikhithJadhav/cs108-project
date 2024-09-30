@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Match Profile</title>
+    <link rel="stylesheet" href="scroll.css">
+</head>
+<body>
+    <div id="matchResult">
+        <h2>Here is Your Ideal Partner:</h2>
+        <div class="profile-card">
+            <img id="studentPhoto" src="" alt="Student Photo">
+            <div class="profile-details">
+                <p id="studentName"></p>
+                <p id="rollNo"></p>
+                <p id="yearOfStudy"></p>
+                <p id="age"></p>
+                <p id="gender"></p>
+                <p id="email"></p>
+                <p id="interests"></p>
+                <p id="hobbies"></p>
+            </div>
+        </div>
+        <button type="button" class="vapas-btn" onclick="vapas()">Wanna Try Again? </button>
+    </div>
+    <script>
+        function displayBestMatch() {
+            const bestMatchString = localStorage.getItem('bestMatch');
+            if (bestMatchString) {
+                const bestMatch = JSON.parse(bestMatchString);
+                // Set values for paragraphs
+                document.getElementById('studentPhoto').src = bestMatch.Photo;
+                document.getElementById('studentName').innerText = `Name: ${bestMatch.Name}`;
+                document.getElementById('rollNo').innerText = `Roll No.: ${bestMatch['IITB Roll Number']}`;
+                document.getElementById('yearOfStudy').innerText = `Year of Study: ${bestMatch['Year of Study']}`;
+                document.getElementById('age').innerText = `Age: ${bestMatch.Age}`;
+                document.getElementById('gender').innerText = `Gender: ${bestMatch.Gender}`;
+                document.getElementById('email').innerText = `Email: ${bestMatch.Email}`;
+                document.getElementById('interests').innerText = `Interests: ${bestMatch.Interests.join(', ')}`;
+                document.getElementById('hobbies').innerText = `Hobbies: ${bestMatch.Hobbies.join(', ')}`;
+            } else {
+                document.getElementById('matchResult').innerHTML = `<p>No suitable match found.</p>`;
+            }
+        }
+
+        function vapas() {
+            window.location.href = "dating.html";
+        }
+        // Call the displayBestMatch function when the page loads
+        displayBestMatch();
+    </script>
+</body>
+</html>

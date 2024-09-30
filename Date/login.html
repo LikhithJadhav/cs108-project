@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap">
+  <style>
+      body {
+          font-family: 'Jacques Francois', sans-serif;
+      }
+      
+    /* Virtual Keyboard Styles */
+    .virtual-keyboard {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 5px;
+        padding: 2px;
+        border: 2px ;
+        border-radius: 10px;
+        justify-content: center;
+        
+        padding-bottom: 5px;
+    }
+    .virtual-keyboard .key {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 2px;
+        cursor: pointer;
+    
+    }
+  </style>
+  <!-- Stylizing here -->
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="quote">
+      <p> 
+        Look For A Partner Who Prefers YOU
+      </p>
+    </div>
+  <div class="login-container">
+    <h2>Login</h2>
+    <!-- Specifying how the form data will be handled when submitted,# means current page and post means it will be sent to the body -->
+    <form action="#" method="post"> 
+      <div class="form-group">
+       
+        <input type="text" placeholder="Username" required>
+       
+        
+      </div>
+     
+    <div class="input-group" id="passwordInput">
+       
+        <input type="password" id="passwordinput" placeholder="Password" >
+    </div>
+    <div class="virtual-keyboard">                              <!-- virtual keyboard division-->
+      <div class="key" onclick="addValue('1')">1</div>
+      <div class="key" onclick="addValue('2')">2</div>
+      <div class="key" onclick="addValue('3')">3</div>
+      <div class="key" onclick="addValue('4')">4</div>
+      <div class="key" onclick="addValue('5')">5</div>
+      <div class="key" onclick="addValue('6')">6</div>
+      <div class="key" onclick="addValue('7')">7</div>
+      <div class="key" onclick="addValue('8')">8</div>
+      <div class="key" onclick="addValue('9')">9</div>
+      <div class="key" onclick="addValue('0')">0</div>
+      <div class="key" onclick="addValue('q')">Q</div>
+      <div class="key" onclick="addValue('w')">W</div>
+      <div class="key" onclick="addValue('e')">E</div>
+      <div class="key" onclick="addValue('r')">R</div>
+      <div class="key" onclick="addValue('t')">T</div>
+      <div class="key" onclick="addValue('y')">Y</div>
+      <div class="key" onclick="addValue('u')">U</div>
+      <div class="key" onclick="addValue('i')">I</div>
+      <div class="key" onclick="addValue('o')">O</div>
+      <div class="key" onclick="addValue('p')">P</div>
+      <div class="key" onclick="addValue('a')">A</div>
+      <div class="key" onclick="addValue('s')">S</div>
+      <div class="key" onclick="addValue('d')">D</div>
+      <div class="key" onclick="addValue('f')">F</div>
+      <div class="key" onclick="addValue('g')">G</div>
+      <div class="key" onclick="addValue('h')">H</div>
+      <div class="key" onclick="addValue('j')">J</div>
+      <div class="key" onclick="addValue('k')">K</div>
+      <div class="key" onclick="addValue('l')">L</div>
+      <div class="key" onclick="addValue('z')">Z</div>
+      <div class="key" onclick="addValue('x')">X</div>
+      <div class="key" onclick="addValue('c')">C</div>
+      <div class="key" onclick="addValue('v')">V</div>
+      <div class="key" onclick="addValue('b')">B</div>
+      <div class="key" onclick="addValue('n')">N</div>
+      <div class="key" onclick="addValue('m')">M</div>
+      <div class="key" onclick="backspace()">Backspace</div>
+  </div>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+      <div class="msg_popup">
+      <p id="LoginMessage"></p>
+      </div>
+       <div> <a href="forgot.html" class="forgot-password">Forgot Password?</a>
+      </div>
+     
+    </form>
+      </div>
+    <script src="login.js"></script>
+    <script>
+      function addValue(value) {
+        var passwordinput = document.getElementById('passwordinput');
+        passwordinput.value += value;
+      }
+      function backspace() {
+        var passwordinput = document.getElementById('passwordinput');
+        passwordinput.value = passwordinput.value.slice(0, -1);
+      }
+    </script>
+    
+  </div>
+</body>
+</html>

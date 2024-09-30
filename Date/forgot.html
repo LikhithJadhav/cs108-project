@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <script src="forgot.js" defer></script>
+    <!-- Stylizing here -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="forgot-container">
+        <div class="forget">
+        <h2>Forgot Password</h2>
+        </div>
+        <form id="forgotForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <button type="button" id="submitButton">Submit</button>
+            <div id="secretQuestionDiv" style="display: none;">
+                <p id="secretQuestion"></p>
+                <label for="secretAnswer">Answer:</label>
+                <input type="text" id="secretAnswer" name="secretAnswer" required><br><br>
+                <button type="button" id="submitAnswer">Submit Answer</button>
+                <div class="msg_popup">
+                    <p id="passwordMessage"></p>
+                </div>
+            </div>
+            <div> <a href="login.html" class="dhabidi">Go back to Login</a>
+            </div>
+    </div>    
+    </form>
+</body>
+</html>
